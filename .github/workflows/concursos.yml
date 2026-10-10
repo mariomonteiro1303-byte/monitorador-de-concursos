@@ -1,0 +1,30 @@
+name: Monitor de Concursos
+
+on:
+  schedule:
+    # Roda todos os dias às 08:00 UTC (ajuste o horário se preferir)
+    - cron: '0 8 * * *'
+  workflow_dispatch: # Permite rodar manualmente clicando em um botão no GitHub
+
+jobs:
+  run-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copiar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Instalar dependências
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Executar script de monitoramento
+        env:
+          EMAIL_REMETENTE: ${{ secrets.EMAIL_REMETENTE }}
+          EMAIL_SENHA: ${{ secrets.EMAIL_SENHA }}
+          EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
+        run: python monitor.py
