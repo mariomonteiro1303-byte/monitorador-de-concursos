@@ -1,4 +1,71 @@
 {
-  "updated_at": null,
-  "items": {}
+  "updated_at": "2026-10-21T18:48:00-03:00",
+  "items": {
+    "3176b518b1d9f990a92cb887d6b24dcd09843f2066a2417da94399c437bdcaa2": {
+      "signature": "e96a6fa5b1cca48b9adca767362802a06fc7f8154dbe958bf1f02d12db1d10ca",
+      "title": "EDITAL SESAPI/UESPI Nº 08/2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "1ff9c8a854adaaea9217edfa06eb7a0297f264125117a772da56329ddc1ef6dc": {
+      "signature": "4149d7d7121efea9247238be11efc2e87b871d22e3ef5ad78f29116411454bf7",
+      "title": "REABERTURA EDITAL SESAPI/UESPI Nº 08/2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "3407938482e1374e0530d8fdf7c52c7df99db19aaf6bb94c98e025f85d4a8424": {
+      "signature": "5ae3849cf7b7e8534c7e1cf069684d0a1dd50a3a39ec7d13cee9c7c4cdea4535",
+      "title": "EDITAL SESAPI/UESPI Nº 07/202",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "22e4de386a8aa6b2d215d013f202af99354272b7bf74afb3ba19e54cb67da65b": {
+      "signature": "f6844e7ab72d71ccd327bad679d4781bd091eb987b2a0c427531deae1facb4f8",
+      "title": "EDITAL SESAPI/UESPI Nº 06/202",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "a44d4e11614cc38c3b4f6b4ba960f831bea14a4a481606a574ae183a0d3133b3": {
+      "signature": "cb821adbe8071d08c2955f8f1a253ab32b2a8e4b585fac545755461e3a740212",
+      "title": "REABERTURA EDITAL SESAPI/UESPI Nº 06/2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "b802622119513ac1fc00fcd823bde90b68c417aacb99718547b8ae2258d5196f": {
+      "signature": "552fb227b264b1b79243c49e921df9afe9720a1065af432a34ab7e42e15fa500",
+      "title": "Portaria Comissão Organizadora Edital 05/2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "38b22fd05bd86288635f4f4996072c81934460ba3aa12c39a2f8bd85b665f1bb": {
+      "signature": "c7d896014165505d65e99df8c4d8827fb5c56fe23d33d73d3e66035213400ade",
+      "title": "EDITAL Nº 04/2026 – PROCESSO SELETIVO DE ESTÁGIO EXTRACURRICULAR REMUNERADO",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "4d5b7128dd6ab9f918893304916e5801d78ce7876871a9fba533f615c866a6e1": {
+      "signature": "50d8db93ef0f3297e33a96d2d4aea7204c051fd324ca0f9de891dfced464bd3d",
+      "title": "01 - EDITAL n.º 01/2026 - ABERTURA DO CONCURSO",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "0b732a1dc91e13ca82ea51416f0a7cac327afa8119dfe4504f52a83aac1a10c7": {
+      "signature": "e4c36cc7acc566362c1b3af834c64a2bdc70b79309a9d6751d9ab0256ddac4f0",
+      "title": "28 - EDITAL DE DESISTÊNCIA Nº 01-2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "ea1bfb09b4e3a09ea79c07d4645d66e0c2b0d64c6b07e92711738f6d7a18438e": {
+      "signature": "63718e2f469e14fc5ac036f0bfa42fe95a5b3b9bbd5a1fcfc5c9b5c7d67d349b",
+      "title": "29 - EDITAL DE DESISTÊNCIA Nº 02-2026",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "7dc6f048ddd7980440b94cf06857a40b494b19c0ba8d441c199fe9e2ffa87285": {
+      "signature": "62aa46a92dc9f9d3f4507642db80365f395794eb0bbcbeb770d0bcbbbf227111",
+      "title": "Partiu Estágio - Edital 001/2024",
+      "last_seen": "2026-10-21T18:48:00-03:00",
+      "last_notified": "2026-10-21T18:48:00-03:00"
+    }
+  }
 }
