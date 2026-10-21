@@ -1,0 +1,35 @@
+# Configure aqui páginas reais de fontes de concursos.
+# A coleta genérica não garante extração correta em todos os sites.
+# Para cada fonte, configure seletores CSS específicos após inspecionar o HTML.
+estados_prioritarios:
+  - PI
+  - CE
+  - MA
+  - PE
+  - BA
+  - TO
+
+palavras_chave:
+  - concurso
+  - processo seletivo
+  - edital
+
+fontes: []
+# Exemplo de configuração (substitua por URL real e seletores validados):
+# fontes:
+#   - nome: "Nome da fonte"
+#     url: "https://site-oficial.gov.br/concursos"
+#     seletor_links: "a.link-concurso"
+#     max_links_por_execucao: 20
+#     seletores:
+#       "Órgão / Instituição": "h1"
+#       "Área de Atuação": ".area"
+#       "Nível de Escolaridade": ".escolaridade"
+#       "Número de Vagas / Cadastro Reserva": ".vagas"
+#       "Remuneração Inicial": ".remuneracao"
+#       "Período de Inscrição": ".inscricoes"
+#       "Taxa de Inscrição": ".taxa"
+#       "Banca Organizadora": ".banca"
+#       "Local / Abrangência": ".local"
+#       "Data da Prova": ".data-prova"
+#       "Link Oficial do Edital": "a.link-edital"
