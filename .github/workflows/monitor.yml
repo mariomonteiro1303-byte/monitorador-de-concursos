@@ -1,25 +1,30 @@
 name: Monitor de Concursos
 
 on:
-  # Executa diariamente às 08:00 no horário de Brasília (11:00 UTC).
+  # O cron usa UTC: 11:00 UTC = 08:00 no horário de Brasília (UTC-3).
   schedule:
     - cron: "0 11 * * *"
-  # Permite executar manualmente pela aba Actions do GitHub.
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: monitor-concursos
+  cancel-in-progress: false
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Baixar repositório
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: "pip"
@@ -28,15 +33,32 @@ jobs:
         run: python -m pip install -r requirements.txt
 
       - name: Validar sintaxe Python
-        run: python -m py_compile monitor.py
+        run: python -m py_compile monitor.py test_smtp.py
 
-      - name: Executar testes
+      - name: Executar testes automatizados
         run: python -m unittest discover -s tests -v
 
-      - name: Executar monitor
+      - name: Coletar editais e enviar relatório
         env:
           EMAIL_REMETENTE: ${{ secrets.EMAIL_REMETENTE }}
           EMAIL_SENHA: ${{ secrets.EMAIL_SENHA }}
           EMAIL_DESTINATARIO: ${{ secrets.EMAIL_DESTINATARIO }}
           ENVIAR_EMAIL: "true"
         run: python monitor.py
+
+      # Só existe estado novo depois de o SMTP aceitar o relatório. O commit evita
+      # que a mesma oportunidade seja enviada de novo todos os dias sem alterações.
+      - name: Persistir estado dos editais notificados
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add monitor_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Atualiza estado do Monitor de Concursos [skip ci]"
+            git push origin HEAD:${GITHUB_REF_NAME}
+          else
+            echo "Nenhuma alteração no estado para persistir."
+          fi

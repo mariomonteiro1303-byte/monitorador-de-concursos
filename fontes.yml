@@ -1,35 +1,108 @@
-# Configure aqui páginas reais de fontes de concursos.
-# A coleta genérica não garante extração correta em todos os sites.
-# Para cada fonte, configure seletores CSS específicos após inspecionar o HTML.
-estados_prioritarios:
-  - PI
-  - CE
-  - MA
-  - PE
-  - BA
-  - TO
+# Fontes oficiais iniciais. A cobertura NÃO é exaustiva para todos os municípios
+# ou órgãos estaduais. Cada fonte deve ser revalidada periodicamente.
+# Os filtros de links priorizam editais de abertura e excluem atos posteriores.
+max_links_por_fonte: 10
+somente_abertos_ou_nao_confirmados: true
+estados_prioritarios: [PI, CE, MA, PE, BA, TO]
 
-palavras_chave:
-  - concurso
-  - processo seletivo
-  - edital
+fontes:
+  - nome: "SEAD-PI - Concursos do Estado do Piauí"
+    url: "https://app.sead.pi.gov.br/concursos"
+    estado: "PI"
+    local_padrao: "Estado do Piauí"
+    max_links_por_execucao: 10
+    link_allow_patterns:
+      - "EDITAL"
+      - "concurso público"
+      - "processo seletivo"
+      - "abertura de inscrições"
+      - "reabertura de inscrições"
 
-fontes: []
-# Exemplo de configuração (substitua por URL real e seletores validados):
-# fontes:
-#   - nome: "Nome da fonte"
-#     url: "https://site-oficial.gov.br/concursos"
-#     seletor_links: "a.link-concurso"
-#     max_links_por_execucao: 20
-#     seletores:
-#       "Órgão / Instituição": "h1"
-#       "Área de Atuação": ".area"
-#       "Nível de Escolaridade": ".escolaridade"
-#       "Número de Vagas / Cadastro Reserva": ".vagas"
-#       "Remuneração Inicial": ".remuneracao"
-#       "Período de Inscrição": ".inscricoes"
-#       "Taxa de Inscrição": ".taxa"
-#       "Banca Organizadora": ".banca"
-#       "Local / Abrangência": ".local"
-#       "Data da Prova": ".data-prova"
-#       "Link Oficial do Edital": "a.link-edital"
+  - nome: "ALECE - Concursos da Assembleia Legislativa do Ceará"
+    url: "https://transparencia.al.ce.gov.br/portal/concursos-publicos"
+    estado: "CE"
+    local_padrao: "Ceará, Assembleia Legislativa"
+    max_links_por_execucao: 10
+    link_allow_patterns:
+      - "edital.*2026"
+      - "edital de abertura"
+      - "concurso público.*2026"
+
+  - nome: "SAD-PE - Concursos em andamento"
+    url: "https://www.sad.pe.gov.br/concursos-e-selecoes-simplificadas/64-concursos-e-selecoes-simplificadas/74-concursos-em-andamento"
+    estado: "PE"
+    local_padrao: "Estado de Pernambuco"
+    max_links_por_execucao: 10
+    link_allow_patterns:
+      - "Concurso Público Unificado"
+      - "Polícia Civil"
+      - "Polícia Científica"
+      - "Soldados da Polícia Militar"
+      - "Soldados do Bombeiro"
+      - "Analista e Técnico em Gestão Universitária"
+      - "edital de abertura"
+
+  - nome: "SAD-PE - Seleções simplificadas em andamento"
+    url: "https://www.sad.pe.gov.br/tabela-de-pagamento/64-concursos-e-selecoes-simplificadas/23208-selecoes-simplificadas-andamento"
+    estado: "PE"
+    local_padrao: "Estado de Pernambuco"
+    max_links_por_execucao: 10
+    link_allow_patterns:
+      - "seleção simplificada"
+      - "seleção.*2026"
+      - "processo seletivo"
+      - "edital de abertura"
+      - "nível superior.*2026"
+      - "nível técnico.*2026"
+      - "professor.*2026"
+      - "analista.*2026"
+
+  - nome: "SAEB-BA - Editais da Secretaria da Administração da Bahia"
+    url: "https://www.ba.gov.br/administracao/editais"
+    estado: "BA"
+    local_padrao: "Estado da Bahia"
+    max_links_por_execucao: 10
+    link_allow_patterns:
+      - "Edital de Abertura de Inscrições"
+      - "Seleção Reda.*2026"
+      - "processo seletivo.*2026"
+      - "concurso público.*2026"
+
+  - nome: "Prefeitura de Feira Nova do Maranhão - Concursos"
+    url: "https://www.feiranovadomaranhao.ma.gov.br/concursos"
+    estado: "MA"
+    local_padrao: "Feira Nova do Maranhão, MA"
+    max_links_por_execucao: 5
+    link_allow_patterns:
+      - "CONCURSO PÚBLICO"
+      - "EDITAL DE CONCURSO"
+      - "PROCESSO SELETIVO"
+
+  - nome: "UNITINS - editais públicos da universidade estadual do Tocantins"
+    url: "https://unitins.br/Concursos/Publico/Home/Todos"
+    estado: "TO"
+    local_padrao: "Tocantins, UNITINS"
+    max_links_por_execucao: 8
+    link_allow_patterns:
+      - "concurso público"
+      - "processo seletivo simplificado"
+      - "concurso.*professor"
+      - "técnico administrativo"
+    link_exclude_patterns:
+      - "monitoria"
+      - "vestibular"
+      - "eleição"
+      - "hackathon"
+      - "discente"
+      - "estágio"
+      - "estagio"
+      - "bolsista"
+      - "pós-graduação"
+      - "pós gradua[cç][aã]o"
+
+# Observações de cobertura:
+# - As fontes de MA e TO, nesta primeira versão, não representam todos os concursos
+#   estaduais/municipais desses estados. Feira Nova é uma fonte municipal de MA.
+# - O portal de concursos públicos do Tocantins precisa de validação de uma página
+#   central funcional antes de ativá-lo; evitar inventar um endpoint.
+# - Fontes federais e outros municípios serão adicionados após validação de cada URL.

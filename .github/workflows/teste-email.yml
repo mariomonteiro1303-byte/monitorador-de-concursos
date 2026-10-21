@@ -12,14 +12,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Baixar repositório
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v7
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-
-      - name: Testar autenticação e enviar e-mail de teste
+      - name: Testar envio SMTP do Gmail
         env:
           EMAIL_REMETENTE: ${{ secrets.EMAIL_REMETENTE }}
           EMAIL_SENHA: ${{ secrets.EMAIL_SENHA }}
