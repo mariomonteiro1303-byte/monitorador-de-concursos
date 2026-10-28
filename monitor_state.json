@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T18:48:00-03:00",
+  "updated_at": "2026-10-28T13:55:48-03:00",
   "items": {
     "3176b518b1d9f990a92cb887d6b24dcd09843f2066a2417da94399c437bdcaa2": {
       "signature": "e96a6fa5b1cca48b9adca767362802a06fc7f8154dbe958bf1f02d12db1d10ca",
@@ -66,6 +66,12 @@
       "title": "Partiu Estágio - Edital 001/2024",
       "last_seen": "2026-10-21T18:48:00-03:00",
       "last_notified": "2026-10-21T18:48:00-03:00"
+    },
+    "b66bf6a089ae9abc4b911ff333e946dec55fc8589dabe94f929c649cdd65933a": {
+      "signature": "e6523f183eea7c572446a19eea0139adaae4139ac41bb658d2cf91b167c421de",
+      "title": "PORTARIA",
+      "last_seen": "2026-10-28T13:55:48-03:00",
+      "last_notified": "2026-10-28T13:55:48-03:00"
     }
   }
 }
